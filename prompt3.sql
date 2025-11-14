@@ -1,4 +1,4 @@
--- Comprehensive join between Customers, Orders, OrderItems, Products, and Payments
+-- Comprehensive join to show customer, order, order item, product, and payment details
 SELECT
     Customers.CustomerID,
     Customers.FirstName,
@@ -8,17 +8,21 @@ SELECT
     Orders.OrderStatus,
     Products.ProductName,
     OrderItems.Quantity,
-    Products.Price,
+    OrderItems.UnitPrice,
+    OrderItems.Subtotal,
     Payments.PaymentID,
     Payments.PaymentDate,
-    Payments.Amount
+    Payments.PaymentAmount,
+    Payments.PaymentMethod,
+    Payments.PaymentStatus
 FROM Customers
-    -- Join Orders to Customers by CustomerID
+    -- Each order is placed by a customer
     JOIN Orders ON Customers.CustomerID = Orders.CustomerID
-    -- Join OrderItems to Orders by OrderID
+    -- Each order has multiple order items
     JOIN OrderItems ON Orders.OrderID = OrderItems.OrderID
-    -- Join Products to OrderItems by ProductID
+    -- Each order item is linked to a product
     JOIN Products ON OrderItems.ProductID = Products.ProductID
-    -- Join Payments to Orders by OrderID
+    -- Each payment is for one order
     JOIN Payments ON Orders.OrderID = Payments.OrderID
 ORDER BY Orders.OrderDate DESC;
+

@@ -1,0 +1,86 @@
+Task: Generate Synthetic E-commerce Data (5 Files)
+
+Instructions:
+
+
+Generate 5 separate CSV files of synthetic e-commerce data.
+
+
+Each file should represent a different aspect of an e-commerce system:
+
+Customers
+Products
+Orders
+Order Items
+Payments
+
+
+
+For each file:
+
+Include at least 100 rows of sample data.
+Use realistic, varied values typical for e-commerce platforms.
+Use English names, addresses, and product information.
+Ensure all relationships between files are consistent (e.g., Order Items reference valid Orders and Products).
+
+
+
+File Specifications:
+
+Customers.csv
+
+Columns: CustomerID, FirstName, LastName, Email, Phone, Address, City, State, Country, SignupDate
+
+
+Products.csv
+
+Columns: ProductID, ProductName, Category, Price, StockQuantity, Description
+
+
+Orders.csv
+
+Columns: OrderID, CustomerID, OrderDate, OrderStatus, ShippingAddress, TotalAmount
+
+
+OrderItems.csv
+
+Columns: OrderItemID, OrderID, ProductID, Quantity, UnitPrice, Subtotal
+
+
+Payments.csv
+
+Columns: PaymentID, OrderID, PaymentDate, PaymentAmount, PaymentMethod, PaymentStatus
+
+
+
+
+
+Output Format:
+
+
+For each file, provide the CSV data enclosed within triple backticks labeled with the filename.
+
+
+Example:
+Customers.csv
+CustomerID,FirstName,LastName,Email,Phone,Address,City,State,Country,SignupDate
+1,John,Doe,john.doe@email.com,555-1234,123 Main St,Springfield,IL,USA,2022-01-15
+...
+
+
+
+
+
+Constraints:
+
+Do not include file explanations or any text outside the CSV code blocks.
+Ensure all IDs are unique and consistently referenced between files.
+
+
+
+
+Example for Customers.csv (first 2 rows):
+Customers.csv
+CustomerID,FirstName,LastName,Email,Phone,Address,City,State,Country,SignupDate
+1,Jane,Smith,jane.smith@email.com,555-6789,456 Oak Ave,Riverside,CA,USA,2023-03-02
+2,Alex,Johnson,alex.j@email.com,555-4321,789 Pine Rd,Greenville,NY,USA,2022-11-19
